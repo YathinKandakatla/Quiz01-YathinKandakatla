@@ -18,9 +18,9 @@ C. Be sure to train and test on completely separate videos, taking care to ensur
 
 D. Split the data randomly and apply random transformations and augmentations. The specific types of transformations and the order they are applied in are not important. It is most important to ensure that the widest possible variety of transforms are applied.
 
-Your choice (2.5 points): [your choice here]
+Your choice (2.5 points): C
 
-Explain why you chose the answer in 1-2 sentences (2.5 points): [your text here]
+Explain why you chose the answer in 1-2 sentences (2.5 points): Keeping videos with overlapping scenes or recordings out of different splits prevents leakage from highly similar frames. Representative test videos and appropriate robustness transformations, with annotations updated correctly, provide a more reliable evaluation of generalization.
 
 ## Problem 00 - Part B
 
@@ -34,6 +34,6 @@ C. Train the models in PyTorch, use pytest for unit tests with the highest pract
 
 D. Train the models in a custom C++ framework. Ensure the code has the highest unit test practical coverage. Save the models to ONNX files. After training runs for production are complete, load the ONNX files directly into Captum and run Integrated Gradients, since ONNX preserves the PyTorch automatic differentiation graph.
 
-Your choice (2.5 points): [your choice here]
+Your choice (2.5 points): C
 
-Explain why you chose the answer in 1-2 sentences (2.5 points): [your text here]
+Explain why you chose the answer in 1-2 sentences (2.5 points): This toolchain combines PyTorch training, thorough pytest coverage, and multiple Captum attribution methods to guide development and evaluate the final trained model before exporting it to ONNX for deployment. Gradient-based Captum analysis uses the PyTorch model and its automatic differentiation graph; exporting to ONNX does not preserve that PyTorch graph for direct use in Captum.

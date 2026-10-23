@@ -122,6 +122,13 @@ def problem_01() -> CustomImageDataset:
     """
 
     # **** Start of your code *************************************************
+    transform = v2.Compose(
+        [
+            v2.Resize((16, 16)),
+            v2.RandomVerticalFlip(p=1.0),
+            v2.RandomHorizontalFlip(p=1.0),
+        ]
+    )
 
     # **** End of your code ***************************************************
 
